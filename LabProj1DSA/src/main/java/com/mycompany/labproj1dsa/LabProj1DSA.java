@@ -10,6 +10,22 @@ public class LabProj1DSA extends javax.swing.JFrame {
     public LabProj1DSA() {
         initComponents();
     }
+abstract class BookModification{
+    abstract void get();
+
+    abstract void add();
+
+    abstract void remove();
+
+    abstract void update();
+}
+
+class BookMod extends BookModification{
+    void get(){
+    int index = parseInt(index_field.getText());
+        JOptionPane.showMessageDialog(null,"The Book in index ["+ index +"] is " +Bookinfo.get(index));
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -160,11 +176,12 @@ public class LabProj1DSA extends javax.swing.JFrame {
     }//GEN-LAST:event_update_btnActionPerformed
 
     private void remove_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_btnActionPerformed
-
+        
     }//GEN-LAST:event_remove_btnActionPerformed
 
     private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
-
+        BookModification book = new BookMod();
+        book.get();
     }//GEN-LAST:event_search_btnActionPerformed
 
     private void total_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_total_btnActionPerformed
