@@ -10,6 +10,7 @@ public class LabProj1DSA extends javax.swing.JFrame {
     public LabProj1DSA() {
         initComponents();
     }
+    private static ArrayList Bookinfo = new ArrayList();
 abstract class BookModification{
     abstract void get();
 
