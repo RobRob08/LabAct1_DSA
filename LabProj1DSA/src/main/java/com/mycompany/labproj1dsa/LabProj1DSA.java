@@ -25,7 +25,20 @@ class BookMod extends BookModification{
     int index = parseInt(index_field.getText());
         JOptionPane.showMessageDialog(null,"The Book in index ["+ index +"] is " +Bookinfo.get(index));
     }
-    
+    void add(){
+     int index = parseInt(index_field.getText());
+        Bookinfo.add(index,title_field.getText());
+         DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
+        
+        Vector v = new Vector();
+        
+        for(int i = 0; i < Bookinfo.size(); i++){
+ 
+        v.add(title_field.getText());
+        v.add(quantity_field.getText());
+        }
+        dt.addRow(v);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -168,7 +181,8 @@ class BookMod extends BookModification{
     }// </editor-fold>//GEN-END:initComponents
 
     private void add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_btnActionPerformed
-
+        BookModification book = new BookMod (); 
+        book.add();
     }//GEN-LAST:event_add_btnActionPerformed
 
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
