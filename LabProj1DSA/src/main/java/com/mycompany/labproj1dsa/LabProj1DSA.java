@@ -52,7 +52,27 @@ class BookMod extends BookModification{
         JOptionPane.showMessageDialog(null,"Invalid Title");
         }
         }
+    } 
+    void update(){
+     int index1 = parseInt(index_field.getText());
+                Bookinfo.set(index1,title_field.getText());
+        DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
+        
+        for(int x = 0 ; x < dt.getRowCount(); x++){
+        if (x == index1) {
+                dt.removeRow(x);
+                Vector v = new Vector();
+        
+        for(int i = 0; i < Bookinfo.size(); i++){
+ 
+        v.add(title_field.getText());
+        v.add(quantity_field.getText());
+        }
+        dt.addRow(v);
+        }
+        }
     }
+}
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
