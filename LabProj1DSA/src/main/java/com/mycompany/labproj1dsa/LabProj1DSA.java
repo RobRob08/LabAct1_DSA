@@ -221,7 +221,8 @@ class BookMod extends BookModification{
     }//GEN-LAST:event_add_btnActionPerformed
 
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
-
+        BookModification book=new BookMod(); 
+        book.update();
     }//GEN-LAST:event_update_btnActionPerformed
 
     private void remove_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_btnActionPerformed
