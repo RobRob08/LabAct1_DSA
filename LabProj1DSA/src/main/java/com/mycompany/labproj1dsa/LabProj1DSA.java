@@ -26,10 +26,20 @@ class BookMod extends BookModification{
     int index = parseInt(index_field.getText());
         JOptionPane.showMessageDialog(null,"The Book in index ["+ index +"] is " +Bookinfo.get(index));
     }
+
     void add(){
      int index = parseInt(index_field.getText());
+     boolean duplicate = false;
+     DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
+     for(int x = 0 ; x < dt.getRowCount(); x++){
+        if (((String)jTable1.getValueAt(x, 0)).equalsIgnoreCase(title_field.getText())) {
+        JOptionPane.showMessageDialog(null,"Book Already Exists in System");
+        duplicate = true;
+        break;
+        }
+    }
+        if(!duplicate){
         Bookinfo.add(index,title_field.getText());
-         DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
         
         Vector v = new Vector();
         
@@ -40,6 +50,8 @@ class BookMod extends BookModification{
         }
         dt.addRow(v);
     }
+    }
+    
     void remove(){
     int index1 = parseInt(index_field.getText());
         DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
