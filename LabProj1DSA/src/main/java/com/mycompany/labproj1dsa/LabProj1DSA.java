@@ -22,11 +22,18 @@ abstract class BookModification{
 }
 
 class BookMod extends BookModification{
-    void get(){
+   void get(){
     int index = parseInt(index_field.getText());
+    if (Bookinfo.isEmpty()){
+        JOptionPane.showMessageDialog(null,"Library System is Empty");
+    }
+    else if(index >= Bookinfo.size() || index < 0){
+    JOptionPane.showMessageDialog(null,"Book index does not exist");
+    }
+    else{
         JOptionPane.showMessageDialog(null,"The Book in index ["+ index +"] is " +Bookinfo.get(index));
     }
-
+    }
     void add(){
      int index = parseInt(index_field.getText());
      boolean duplicate = false;
