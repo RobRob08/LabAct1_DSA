@@ -39,6 +39,20 @@ class BookMod extends BookModification{
         }
         dt.addRow(v);
     }
+    
+ void remove(){
+    int index1 = parseInt(index_field.getText());
+        DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
+        for(int x = 0 ; x < dt.getRowCount(); x++){
+        if (((String)jTable1.getValueAt(x, 0)).equals(title_field.getText())) {
+                dt.removeRow(x);
+         Bookinfo.remove(index1);
+        }
+        else {
+        JOptionPane.showMessageDialog(null,"Invalid Title");
+        }
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
