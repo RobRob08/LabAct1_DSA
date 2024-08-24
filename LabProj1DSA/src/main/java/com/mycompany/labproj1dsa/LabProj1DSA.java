@@ -11,6 +11,9 @@ public class LabProj1DSA extends javax.swing.JFrame {
         initComponents();
     }
     private static ArrayList Bookinfo = new ArrayList();
+    Dictionary<String, Integer> dict= new Hashtable<>();
+    int totals;
+    
 abstract class BookModification{
     abstract void get();
 
