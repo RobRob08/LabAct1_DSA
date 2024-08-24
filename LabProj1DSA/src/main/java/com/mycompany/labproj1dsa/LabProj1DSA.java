@@ -38,6 +38,7 @@ class BookMod extends BookModification{
     }
     void add(){
      int index = parseInt(index_field.getText());
+     int quantity = parseInt(quantity_field.getText());
      boolean duplicate = false;
      DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
      for(int x = 0 ; x < dt.getRowCount(); x++){
@@ -46,9 +47,11 @@ class BookMod extends BookModification{
         duplicate = true;
         break;
         }
-    }
+}
         if(!duplicate){
+        
         Bookinfo.add(index,title_field.getText());
+        dict.put(Bookinfo.get(index), quantity);
         
         Vector v = new Vector();
         
@@ -59,6 +62,7 @@ class BookMod extends BookModification{
         }
         dt.addRow(v);
     }
+
     }
     
     void remove(){
