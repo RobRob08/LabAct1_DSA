@@ -46,9 +46,7 @@ class BookMod extends BookModification{
         if (((String)jTable1.getValueAt(x, 0)).equals(title_field.getText())) {
                 dt.removeRow(x);
          Bookinfo.remove(index1);
-        }
-        else {
-        JOptionPane.showMessageDialog(null,"Invalid Title");
+         dict.remove(Bookinfo.get(index1));
         }
         }
     }
