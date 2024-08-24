@@ -19,6 +19,8 @@ abstract class BookModification{
     abstract void remove();
 
     abstract void update();
+
+    abstract void total();
 }
 
 class BookMod extends BookModification{
@@ -90,6 +92,14 @@ class BookMod extends BookModification{
         dt.addRow(v);
         }
         }
+    }
+     void total(){
+        totals = 0;
+        for(int i = 0; i < Bookinfo.size(); i++){
+        totals += dict.get(Bookinfo.get(i));
+        }
+    JOptionPane.showMessageDialog(null,"Total Number of books in system is: " + Bookinfo.size()+"\n Total Quantity of Books on Storage is: "+ totals );
+    
     }
 }
 
@@ -255,7 +265,8 @@ class BookMod extends BookModification{
     }//GEN-LAST:event_search_btnActionPerformed
 
     private void total_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_total_btnActionPerformed
-
+        BookModification book = new BookMod(); 
+        book.total();
     }//GEN-LAST:event_total_btnActionPerformed
 
     public static void main(String args[]) {
