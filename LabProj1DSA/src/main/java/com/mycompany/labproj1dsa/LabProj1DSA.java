@@ -33,10 +33,10 @@ class BookMod extends BookModification{
         JOptionPane.showMessageDialog(null,"Library System is Empty");
     }
     else if(index >= Bookinfo.size() || index < 0){
-    JOptionPane.showMessageDialog(null,"Book index does not exist");
+    JOptionPane.showMessageDialog(null,"index does not exist and has no Saved Book");
     }
     else{
-        JOptionPane.showMessageDialog(null,"The Book in index ["+ index +"] is " +Bookinfo.get(index));
+        JOptionPane.showMessageDialog(null,"The Book in index ["+ index +"] is " +Bookinfo.get(index)+"\nBook Quantity :"+ dict.get(Bookinfo.get(index)));
     }
     }
     void add(){
