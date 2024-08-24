@@ -81,7 +81,10 @@ class BookMod extends BookModification{
     } 
     void update(){
      int index1 = parseInt(index_field.getText());
+     int quantity = parseInt(quantity_field.getText());
                 Bookinfo.set(index1,title_field.getText());
+                dict.remove(Bookinfo.get(index1));
+                
         DefaultTableModel dt = (DefaultTableModel)jTable1.getModel();
         
         for(int x = 0 ; x < dt.getRowCount(); x++){
@@ -95,6 +98,7 @@ class BookMod extends BookModification{
         v.add(quantity_field.getText());
         }
         dt.addRow(v);
+        dict.put(Bookinfo.get(index1), quantity);
         }
         }
     }
