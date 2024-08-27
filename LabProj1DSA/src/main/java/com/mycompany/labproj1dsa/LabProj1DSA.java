@@ -39,6 +39,7 @@ class BookMod extends BookModification{
         JOptionPane.showMessageDialog(null,"The Book in index ["+ index +"] is " +Bookinfo.get(index)+"\nBook Quantity :"+ dict.get(Bookinfo.get(index)));
     }
     }
+    
     void add(){
      int index = parseInt(index_field.getText());
      int quantity = parseInt(quantity_field.getText());
@@ -50,7 +51,7 @@ class BookMod extends BookModification{
         duplicate = true;
         break;
         }
-}
+        }
         if(!duplicate){
         
         Bookinfo.add(index,title_field.getText());
@@ -79,6 +80,7 @@ class BookMod extends BookModification{
         }
         }
     } 
+    
     void update(){
      int index1 = parseInt(index_field.getText());
      int quantity = parseInt(quantity_field.getText());
@@ -102,13 +104,13 @@ class BookMod extends BookModification{
         }
         }
     }
+    
      void total(){
         totals = 0;
         for(int i = 0; i < Bookinfo.size(); i++){
         totals += dict.get(Bookinfo.get(i));
         }
     JOptionPane.showMessageDialog(null,"Total Number of books in system is: " + Bookinfo.size()+"\n Total Quantity of Books on Storage is: "+ totals );
-    
     }
 }
 
